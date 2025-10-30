@@ -113,7 +113,7 @@ fun FormDataDiri(modifier: Modifier
                 .height(100.dp)
                 .width(300.dp)
         ){
-
+            Column ()
         }
     }
 
