@@ -98,12 +98,12 @@ fun FormDataDiri(modifier: Modifier
                 alamat=textAlamat
             }
         ){
-            Text(stringResource(" Submit"))
+            Text(stringResource(R.string.submit))
         }
         Divider(Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
             id = R.dimen.padding_medium
         )),
-            dimensionResource(R,dimen.divider.tipis),
+            dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
         ElevatedCard(
