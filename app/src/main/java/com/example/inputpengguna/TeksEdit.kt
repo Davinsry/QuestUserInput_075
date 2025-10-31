@@ -48,5 +48,7 @@ fun FormDataDiri(modifier: Modifier){
 
     val genderOptions: List<String> = listOf("Laki-laki", "Perempuan")
     val statusKawinOptions: List<String> = listOf("Janda", "Lajang", "Duda")
+
+    val warnaUnguPucat = Color(0xFFF3E5F5)
 }
 
