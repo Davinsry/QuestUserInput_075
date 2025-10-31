@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
@@ -50,10 +52,13 @@ fun FormDataDiri(modifier: Modifier){
     val statusKawinOptions: List<String> = listOf("Janda", "Lajang", "Duda")
 
     val warnaUnguPucat = Color(0xFFF3E5F5)
+
+    val scrollState = rememberScrollState()
     Column(
         modifier = modifier
 
             .background(warnaUnguPucat)
+            .verticalScroll(scrollState)
 
 
             .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 32.dp),
@@ -201,6 +206,27 @@ fun FormDataDiri(modifier: Modifier){
                 thickness = 1.dp,
                 color = Color.LightGray
             )
+            ElevatedCard(
+                elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp)
+            ) {
+
+                Column(
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Text(
+                        text = "Hasil Input Data:",
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.padding(bottom = 8.dp)
+                    )
+                    Text(text = "Nama : $nama")
+                    Text(text = "Jenis Kelamin : $jenis")
+                    Text(text = "Status : $statusKawin")
+                    Text(text = "Alamat : $alamat")
+                }
+            }
         }
     }
 }
