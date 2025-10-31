@@ -50,5 +50,15 @@ fun FormDataDiri(modifier: Modifier){
     val statusKawinOptions: List<String> = listOf("Janda", "Lajang", "Duda")
 
     val warnaUnguPucat = Color(0xFFF3E5F5)
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(warnaUnguPucat) //
+
+            .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 32.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+    }
 }
 
