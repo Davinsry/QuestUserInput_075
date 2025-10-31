@@ -180,6 +180,27 @@ fun FormDataDiri(modifier: Modifier){
                     textAlamat = it
                 }
             )
+
+
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 32.dp, start = 8.dp, end = 8.dp),
+                enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty() && textStatusKawin.isNotEmpty(),
+                onClick = {
+                    nama = textNama
+                    jenis = textJK
+                    alamat = textAlamat
+                    statusKawin = textStatusKawin
+                }
+            ) {
+                Text("Submit")
+            }
+            Divider(
+                modifier = Modifier.padding(vertical = 24.dp, horizontal = 8.dp),
+                thickness = 1.dp,
+                color = Color.LightGray
+            )
         }
     }
 }
