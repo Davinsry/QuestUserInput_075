@@ -162,6 +162,24 @@ fun FormDataDiri(modifier: Modifier){
                     }
                 }
             }
+            // Bagian ALAMAT
+            Text(
+                text = "ALAMAT",
+                modifier = Modifier
+                    .align(Alignment.Start)
+                    .padding(top = 24.dp, bottom = 8.dp, start = 8.dp)
+            )
+            OutlinedTextField(
+                value = textAlamat,
+                singleLine = true,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp),
+                label = { Text(text = "Alamat") },
+                onValueChange = {
+                    textAlamat = it
+                }
+            )
         }
     }
 }
