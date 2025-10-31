@@ -72,6 +72,18 @@ fun FormDataDiri(modifier: Modifier){
                 color = MaterialTheme.colorScheme.onSurface
             )
         }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = MaterialTheme.shapes.medium
+                )
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+        }
     }
 }
 
