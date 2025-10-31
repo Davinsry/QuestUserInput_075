@@ -82,7 +82,24 @@ fun FormDataDiri(modifier: Modifier){
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
+            Text(
+                text = "NAMA LENGKAP",
+                modifier = Modifier
+                    .align(Alignment.Start) // Rata kiri untuk judul bagian
+                    .padding(bottom = 8.dp, start = 8.dp)
+            )
+            OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier
+                    .fillMaxWidth() // Mengisi lebar penuh
+                    .padding(horizontal = 8.dp),
+                label = { Text(text = "Isian nama lengkap") },
+                onValueChange = {
+                    textNama = it
+                }
+            )
         }
     }
 }
