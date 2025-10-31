@@ -100,6 +100,37 @@ fun FormDataDiri(modifier: Modifier){
                     textNama = it
                 }
             )
+            Text(
+                text = "JENIS KELAMIN",
+                modifier = Modifier
+                    .align(Alignment.Start)
+                    .padding(top = 24.dp, bottom = 8.dp, start = 8.dp)
+            )
+            Column (
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.Top
+            ) {
+                genderOptions.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .selectable(
+                                selected = textJK == item,
+                                onClick = { textJK = item }
+                            )
+                            .padding(horizontal = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textJK == item,
+                            onClick = { textJK = item }
+                        )
+                        Text(
+                            text = item,
+                            modifier = Modifier.padding(start = 4.dp)
+                        )
+                    }
+                }
+            }
         }
     }
 }
