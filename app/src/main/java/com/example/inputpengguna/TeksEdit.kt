@@ -52,13 +52,26 @@ fun FormDataDiri(modifier: Modifier){
     val warnaUnguPucat = Color(0xFFF3E5F5)
     Column(
         modifier = modifier
-            .fillMaxSize()
-            .background(warnaUnguPucat) //
+
+            .background(warnaUnguPucat)
+
 
             .padding(start = 16.dp, end = 16.dp, bottom = 16.dp, top = 32.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
 
+            Text(
+                text = "Formulir Pendaftaran",
+                fontSize = 24.sp,
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(bottom = 32.dp),
+                color = MaterialTheme.colorScheme.onSurface
+            )
+        }
     }
 }
 
