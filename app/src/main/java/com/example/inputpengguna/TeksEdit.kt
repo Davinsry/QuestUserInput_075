@@ -1,10 +1,12 @@
 package com.example.inputpengguna
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,98 +31,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
 
 @Composable
-fun FormDataDiri(modifier: Modifier
-){
-    // variabel-variabel untuk mengingat nilai masukan dari keyboard
+fun FormDataDiri(modifier: Modifier){
     var textNama by remember { mutableStateOf("") }
-    var textAlamat by remember { mutableStateOf(" ") }
+    var textAlamat by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
+    var textStatusKawin by remember { mutableStateOf("") }
 
-    // variabel-variabel untuk menyimpan data yang diperoleh dari komponen UI
     var nama by remember { mutableStateOf("") }
-    var alamat by remember { mutableStateOf(" ") }
+    var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
+    var statusKawin by remember { mutableStateOf("") }
 
-    val gender:List<String> = listOf("Laki-laki","Perempuan")
-
-    Column(modifier = Modifier.padding(top = 50.dp),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally){
-        OutlinedTextField(
-            value = textNama,
-            singleLine = true,
-            shape = MaterialTheme.shapes.large,
-            modifier = Modifier.width(250.dp),
-            label = { Text(text = " Nama Lenkkap") },
-            onValueChange = {
-                textNama = it
-            }
-        )
-        Row {
-            gender.forEach { item ->
-                Row(modifier = Modifier.selectable(
-                    selected = textJK == item,
-                    onClick = { textJK = item }
-                ), verticalAlignment = Alignment.CenterHorizontally as Alignment.Vertical) {
-                    RadioButton(
-                        selected = textJK == item,
-                        onClick = {
-                            textJK = item
-                        })
-
-                }
-            }
-        }
-        OutlinedTextField(
-            value = textAlamat,
-            singleLine = true,
-            modifier = Modifier.width(250.dp),
-            label = { Text(text = " Alamat lengkap")},
-            onValueChange = {
-                textAlamat = it
-            }
-
-        )
-        Divider(Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
-            id = R.dimen.padding_medium
-        )),
-            thickness = dimensionResource(R.dimen.divider_tipis),
-            color = Color.DarkGray
-        )
-        Button(
-            modifier = Modifier.fillMaxWidth(1f),
-            enabled = textAlamat.isNotEmpty(),
-            onClick = {
-                nama=textNama
-                jenis=textJK
-                alamat=textAlamat
-            }
-        ){
-            Text(stringResource(R.string.submit))
-        }
-        Divider(Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
-            id = R.dimen.padding_medium
-        )),
-            dimensionResource(R.dimen.divider_tipis),
-            color = Color.DarkGray
-        )
-        ElevatedCard(
-            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.Black),
-            modifier = Modifier
-                .height(100.dp)
-                .width(300.dp)
-        ){
-            Column (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
-                Text(text = " Nama : " +nama, color = Color.White)
-                Text(text = " Gender : " +jenis, color = Color.White)
-                Text(text = " Alamat : " +alamat, color = Color.White)
-
-            }
-        }
-    }
-
-
+    val genderOptions: List<String> = listOf("Laki-laki", "Perempuan")
+    val statusKawinOptions: List<String> = listOf("Janda", "Lajang", "Duda")
 }
+
