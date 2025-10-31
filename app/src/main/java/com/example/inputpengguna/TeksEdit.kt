@@ -131,6 +131,37 @@ fun FormDataDiri(modifier: Modifier){
                     }
                 }
             }
+            Text(
+                text = "STATUS PERKAWINAN",
+                modifier = Modifier
+                    .align(Alignment.Start)
+                    .padding(top = 24.dp, bottom = 8.dp, start = 8.dp)
+            )
+            Column(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                statusKawinOptions.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .selectable(
+                                selected = textStatusKawin == item,
+                                onClick = { textStatusKawin = item }
+                            )
+                            .fillMaxWidth()
+                            .padding(horizontal = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textStatusKawin == item,
+                            onClick = { textStatusKawin = item }
+                        )
+                        Text(
+                            text = item,
+                            modifier = Modifier.padding(start = 4.dp)
+                        )
+                    }
+                }
+            }
         }
     }
 }
